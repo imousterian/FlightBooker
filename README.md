@@ -1,28 +1,5 @@
-== README
+A flight booking app allowing a user to purchase tickets. The app integrates SendGrid and sends a confirmation email upon booking.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was done as a part of [The Odin Project curriculum](http://www.theodinproject.com/ruby-on-rails/sending-confirmation-emails).
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+A demo is available [here](https://one-way-ticket.herokuapp.com).
