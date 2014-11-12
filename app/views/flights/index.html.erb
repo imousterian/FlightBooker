@@ -1,0 +1,19 @@
+<h2 class="center"> Flight Searcher</h2>
+    <%= render 'search_flights' %>
+    <% if @search_results.count != 0 %>
+        <%= render 'search_results' %>
+    <% else %>
+        <% if params[:start] != params[:finish] %>
+            <div class="row results">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h3> Sorry, no flights were found. </h3>
+                </div>
+            </div>
+        <% elsif !params[:start].blank? %>
+            <div class="row results">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <h3> Your arrival and destination are the same. </h3>
+                </div>
+            </div>
+        <% end %>
+    <% end %>

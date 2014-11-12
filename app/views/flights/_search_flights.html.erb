@@ -1,0 +1,28 @@
+<%= form_tag root_url, method: 'get' do %>
+    <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+            <table class='table table-striped search'>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Date</th>
+                        <th>Tickets</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+              <tbody>
+                  <tr>
+                    <td><%= select_tag :start, options_for_select(@airports, params[:start]), class: "tag" %></td>
+                    <td><%= select_tag :finish, options_for_select(@airports, params[:finish]), class: "tag" %></td>
+                    <td><%= select_tag :date, options_for_select(@dates, params[:date]), class: "tag" %></td>
+                    <td><%= select_tag :passengers, options_for_select(['1','2','3','4'], params[:passengers]), class: "tag" %></td>
+                    <td><%= submit_tag "Search", class: "btn btn-xs btn-primary" %><td>
+                  </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+<% end %>
+

@@ -1,0 +1,13 @@
+Dear <%= @passenger.name %>, thank you for booking at Flight Searcher.
+=====================================================================
+
+Your itinerary is below:
+
+Flight:         <%= @booking.flight.description %>
+Leaves from:    <%= @booking.flight.from_airport.code %>
+Arrives at:     <%= @booking.flight.to_airport.code %>
+Departure time: <%= @booking.flight.date_format%>
+Flight time:    <%= @booking.flight.time_in_hours%>
+
+=====================================================================
+Thank you and have a great day.

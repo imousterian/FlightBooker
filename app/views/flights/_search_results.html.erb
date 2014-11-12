@@ -1,0 +1,32 @@
+<%= form_tag '/bookings/new', method: :get do |i| %>
+    <div class="row results">
+        <div class="col-sm-10 col-sm-offset-1">
+            <table class='table table-striped'>
+              <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>Flight</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    <th>Duration</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @search_results.each do |result| %>
+                  <tr>
+                    <td><%= radio_button_tag :flight_id, result.id %></td>
+                    <td><%= result.description %></td>
+                    <td><%= result.from_airport.code %></td>
+                    <td><%= result.to_airport.code %></td>
+                    <td><%= result.date_format %></td>
+                    <td><%= result.time_in_hours %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        <%= submit_tag "Select Flight", class: "btn btn-xs btn-primary" %>
+        <%= hidden_field_tag :passengers, params[:passengers] %>
+        </div>
+    </div>
+<% end %>

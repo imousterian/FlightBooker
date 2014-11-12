@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3" >
+        <h2 class="center"> Flight confirmation: </h2>
+        <table class='table table-striped'>
+            <tbody>
+                <tr>
+                    <td><strong>Flight:</strong> </td>
+                    <td> <%= @booking.flight.description %> </td>
+                </tr>
+                <tr>
+                    <td><strong>From:</strong> </td>
+                    <td> <%= @booking.flight.from_airport.code %> </td>
+                </tr>
+                <tr>
+                    <td><strong>To:</strong> </td>
+                    <td> <%= @booking.flight.to_airport.code %> </td>
+                </tr>
+                <tr>
+                    <td><strong>Leaves:</strong> </td>
+                    <td> <%= @booking.flight.date_format%> </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 class="center"> Passengers: </h2>
+        <ol>
+            <% @booking.passengers.each do |p| %>
+                <li> <%= "#{p.name} #{p.email}" %></li>
+            <% end %>
+        </ol>
+        <br />
+        <%= link_to 'Back to Search', root_url %>
+    </div>
+</div>

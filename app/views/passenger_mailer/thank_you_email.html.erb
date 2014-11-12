@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1><%= @passenger.name %>, thank you for booking at Flight Searcher.</h1>
+        <p>
+            Your itinerary is below:<br />
+        </p>
+        <p> Flight:         <%= @booking.flight.description %> </p>
+        <p> Leaves from:    <%= @booking.flight.from_airport.code %> </p>
+        <p> Arrives at:     <%= @booking.flight.to_airport.code %> </p>
+        <p> Departure time: <%= @booking.flight.date_format%> </p>
+        <p> Flight time:    <%= @booking.flight.time_in_hours%> </p>
+        <br />
+        <p>Thank you and have a great day.</p>
+    </body>
+</html>

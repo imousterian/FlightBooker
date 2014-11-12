@@ -1,0 +1,63 @@
+@import "bootstrap";
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background-image: image-url('sky2.jpg');
+  background-repeat: repeat-y;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.field_with_errors {
+    background-color: red;
+    display: inline;
+}
+
+.search > thead > tr > th{
+    width: 25%;
+    align: center;
+}
+
+.tag{
+    width: 100%;
+}
+
+.center{
+    text-align: center;
+}
+
+.results{
+    padding-top: 50px;
+}
+
+.table-striped > tbody > tr{
+    background-color: #f9f9f9;;
+}
+
+.form-group{
+    padding-top: 5px;
+}
+
+.alert-danger{
+    margin-top: 50px;
+    border: 1px solid red;
+}

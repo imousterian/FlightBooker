@@ -1,0 +1,43 @@
+<%= form_for(@booking, :html => {class: 'form-inline'}) do |f| %>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2 class="center"> Your flight information: </h2>
+        <table class='table table-striped'>
+              <thead>
+                <tr>
+                    <th>Flight</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Departs</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><%= @flight.description%></td>
+                    <td><%= @flight.from_airport.code%></td>
+                    <td><%= @flight.to_airport.code%></td>
+                    <td><%= @flight.date_format%></td>
+                  </tr>
+              </tbody>
+            </table>
+            <div class="col-sm-12">
+            <% count = 0 %>
+                <%= hidden_field_tag(:flight_id,  params[:flight_id]) %>
+                <%= f.hidden_field :flight_id, value: params[:flight_id] %>
+                <%= f.fields_for :passengers do |p| %>
+                    <div class="form-group">
+                        <%= p.label "Passenger #{count += 1}" %>
+                        <%= p.label :name %>
+                        <%= p.text_field :name,  class: 'form-control' %>
+                        <%= p.label :email %>
+                        <%= p.text_field :email, class: 'form-control' %>
+                    </div>
+                <% end %>
+                <br />
+                <br />
+                <%= f.submit "Book Flight", class: "btn btn-xs btn-primary" %>
+            <p style="padding-top:5px;"><%= link_to 'Back to Search', root_url %></p>
+            </div>
+    </div>
+</div>
+<% end %>
